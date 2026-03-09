@@ -1,0 +1,16 @@
+{
+    "name": "baba-html",
+    "version": "1.0.0",
+    "description": "A lightweight backend runtime to create APIs using HTML files",
+    "main": "bin/baba.js",
+    "bin": {
+        "baba": "bin/baba.js"
+    },
+    "scripts": {
+        "start": "node bin/baba.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "node-html-parser": "^6.1.12"
+    }
+}

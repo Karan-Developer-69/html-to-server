@@ -1,0 +1,59 @@
+<server port="3000">
+
+    <static dir="public" />
+
+
+
+    <api path="/hello">
+        <log message="Hello API invoked" />
+        <response type="json">
+            {
+            "message": "Hello from Baba HTML"
+            }
+        </response>
+    </api>
+
+    <api method="POST" path="/login">
+        <log message="Login attempt" />
+        <response type="json">
+            {
+            "success": true
+            }
+        </response>
+    </api>
+
+    <api path="/info">
+        <response type="text">
+            Baba HTML Server is running.
+        </response>
+    </api>
+
+    <api path="/slow">
+        <log message="Slow API started" />
+        <delay ms="1000" />
+        <response type="text">
+            This took a while!
+        </response>
+    </api>
+
+    <api path="*">
+        <log message="come here" />
+        <status code="200" />
+        <response type="json">
+            {
+            "message": "Not Found"
+            }
+        </response>
+    </api>
+
+    <api path="/missing">
+        <log message="Not found requested" />
+        <status code="404" />
+        <response type="json">
+            {
+            "error": "Not Found"
+            }
+        </response>
+    </api>
+
+</server>
